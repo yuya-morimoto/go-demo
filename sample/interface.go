@@ -2,7 +2,6 @@ package sample
 
 import (
 	"fmt"
-	"unsafe"
 )
 
 type controller interface {
@@ -56,10 +55,8 @@ func Interface() {
 
 	fmt.Println(v)
 
-	var i1 interface{}
 	var i2 any
-	fmt.Println("%[1]v %[1]T %v\n", i1, unsafe.Sizeof(i1))
-	fmt.Println("%[1]v %[1]T %v\n", i2, unsafe.Sizeof(i2))
+
 	checkType(i2)
 	i2 = 1
 	checkType(i2)
