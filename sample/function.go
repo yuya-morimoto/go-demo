@@ -22,7 +22,7 @@ func trimExtension(files ...string) []string {
 	return out
 }
 
-func fileChecker(name string) (string, error) {
+func fileChecker1(name string) (string, error) {
 	f, err := os.Open(name)
 	if err != nil {
 		return "", errors.New("file not found")
@@ -53,7 +53,7 @@ func Function() {
 	funcDefer()
 	files := []string{"file1.csv", "file2.csv", "file3.csv"}
 	fmt.Println(trimExtension(files...))
-	name, err := fileChecker("file.txt")
+	name, err := fileChecker1("file.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
